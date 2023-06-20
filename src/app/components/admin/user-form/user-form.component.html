@@ -1,0 +1,75 @@
+<header class="bg-surface-primary border-bottom pt-6">
+  <div class="container-fluid">
+    <div class="mb-npx">
+      <div class="row align-items-center">
+        <div class="col-sm-6 col-12 mb-4 mb-sm-0">
+          <!--Title-->
+          <h1 class="h3 mb-0 ls-tight">Admin</h1>
+        </div>
+      </div>
+      <!-- Nav -->
+      <ul class="nav nav-tabs mt-4 overflow-x border-0"></ul>
+    </div>
+  </div>
+</header>
+<form (submit)="update(contactForm)" #contactForm="ngForm">
+  <div class="header">
+    <h2>User Edit Page</h2>
+    <br>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputFirstName">First Name</label>
+      <input type="text" class="form-control" [ngModel]="user.firstName" name="firstname" #firstnameTxt="ngModel" required>
+
+      <p class="errMsg" *ngIf="!firstnameTxt.valid && firstnameTxt.touched">First name is required</p>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputLastName">Last Name</label>
+      <input type="text" class="form-control" id="inputLastName" [ngModel]="user.lastName" name="lastname" #lastname="ngModel" required>
+      <p class="errMsg" *ngIf="!lastname.valid && lastname.touched">Last name is required</p>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputName">Display Name</label>
+      <input type="text" class="form-control" id="inputName" [ngModel]="user.displayName" name="name" #name="ngModel" required>
+      <p class="errMsg" *ngIf="!name.valid && name.touched">Display name is required</p>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputEmail">Email</label>
+      <input type="email" class="form-control" id="inputEmail" [ngModel]="user.email" name="email" required email>
+
+    </div>
+    <!-- <div class="form-group col-md-6">
+            <label for="inputPassword">Password</label>
+            <input type="password" class="form-control" id="inputPassword" ngModel name="password" required>
+
+        </div> -->
+    <div class="form-group col-md-6">
+      <label for="inputPhone">Phone</label>
+      <input type="text" class="form-control" id="inputPhone" [ngModel]="user.phone" name="phone">
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputAddress">Address</label>
+      <textarea class="form-control" id="inputAddress" rows="1" [ngModel]="user.address" name="address" required>
+            </textarea>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputState">Medical Condition</label>
+      <select id="inputState" class="form-control" [ngModel]="user.medicalCondition" name="medicalCondition" #medicalCondition="ngModel" required>
+        <option value="heartProblem">Heart Problems</option>
+        <option value="lungProblem">Lung Problems</option>
+        <option value="kidneyProblem">Kidney Problems</option>
+        <option value="liverProblem">Liver Problems</option>
+      </select>
+ <p class="errMsg" *ngIf="!medicalCondition.valid && medicalCondition.touched">Medical Condition is required</p>
+    </div>
+  </div>
+  <br><br>
+  <button type="submit" class="btn btn-primary ms-2" [disabled]="!contactForm.valid">Update</button>
+
+  <button type="button" class="btn btn-danger ms-12" (click)="delete(id!)" >Delete</button>
+</form>

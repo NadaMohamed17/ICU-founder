@@ -1,0 +1,68 @@
+<header class="bg-surface-primary border-bottom pt-6">
+  <div class="container-fluid">
+    <div class="mb-npx">
+      <div class="row align-items-center">
+        <div class="col-sm-6 col-12 mb-4 mb-sm-0">
+          <!--Title-->
+          <h1 class="h3 mb-0 ls-tight">Admin</h1>
+        </div>
+      </div>
+      <!-- Nav -->
+      <ul class="nav nav-tabs mt-4 overflow-x border-0"></ul>
+    </div>
+  </div>
+</header>
+<div class="container text-center text-white">
+  <div class="row pt-5">
+    <div class="col-lg-8 mx-auto">
+      <h1 class="display-4">User Table</h1>
+    </div>
+  </div>
+</div><!-- End -->
+
+
+<div class="container py-7">
+  <div class="row">
+    <div class="col-lg-12 mx-auto bg-white rounded shadow">
+
+      <!-- Fixed header table-->
+      <h1  class = "text-center" *ngIf="users.length==0">Loading</h1>
+      <div class="table-responsive" style="overflow:scroll" *ngIf="users.length>0">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col" class ="col-3">#</th>
+              <th scope="col" class="col-3">ID</th>
+              <th scope="col" class="col-3">Display Name</th>
+              <th scope="col" class="col-3">First Name</th>
+              <th scope="col" class="col-3">Last Name</th>
+              <th scope="col" class="col-3">Email</th>
+              <th scope="col" class="col-3">Address</th>
+              <th scope="col" class="col-3">Phone</th>
+              <th scope="col" class="col-3">Medical Condition</th>
+              <th scope="col" class="col-3">Hospital Assigned</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let user of users; let i = index">
+              <th scope="row" class="col-3">{{i+1}}</th>
+              <a [routerLink]="[user.id]" class ="mt-0 ms-0 mb-1 pd-">
+                <td class="col-3">{{user.id}}</td>
+              </a>
+              <td class="col-3">{{user.displayName}}</td>
+              <td class="col-3">{{user.firstName}}</td>
+              <td class="col-3">{{user.lastName}}</td>
+              <td class="col-3">{{user.email}}</td>
+              <td class="col-3">{{user.address}}</td>
+              <td class="col-3">{{user.phone}}</td>
+              <td class="col-3">{{user.medicalCondition}}</td>
+              <td class="col-3">{{user.hospitalID}}</td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div><!-- End -->
+
+    </div>
+  </div>
+</div>

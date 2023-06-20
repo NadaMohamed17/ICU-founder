@@ -1,0 +1,119 @@
+
+    <!-- Header -->
+    <header class="bg-surface-primary border-bottom pt-6">
+      <div class="container-fluid">
+        <div class="mb-npx">
+          <div class="row align-items-center">
+            <div class="col-sm-6 col-12 mb-4 mb-sm-0">
+                    <!--Title-->
+                    <h1 class="h3 mb-0 ls-tight" *ngIf="current_user == null">Getting Patient Info</h1>
+                    <h1 class="h3 mb-0 ls-tight">{{current_user.displayName}}</h1>
+                </div>
+                <!-- Actions -->
+                <div class="col-sm-6 col-12 text-sm-end">
+                    <div class="mx-n1">
+                        <a (click)="buttonPress()" class="btn d-inline-flex btn-sm btn-primary mx-1">
+                            <span class="pe-2"> <i class="bi bi-hospital"></i> </span>
+                            <span>Emergency</span>
+                            <!-- <button onclick="buttonPress()">Emeregency</button> -->
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- Nav -->
+            <ul class="nav nav-tabs mt-4 overflow-x border-0"></ul>
+        </div>
+    </div>
+</header>
+<main class="py-6 bg-surface-secondary">
+    <div class="container-fluid">
+        <!-- Card stats -->
+        <div class="row g-6 mb-6">
+            <div class="col-xl-3 col-sm-6 col-12">
+                <div class="card shadow border-0">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col">
+                                <span class="h6 font-semibold text-muted text-sm d-block mb-2">Getting Location</span>
+                            </div>
+                            <div class="col-auto">
+                                <div class="icon icon-shape bg-tertiary text-white text-lg rounded-circle">
+                                    <i class="bi bi-geo-alt-fill"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-2 mb-0 text-sm">
+                            <span class="badge badge-pill bg-soft-success text-success me-2">
+              <i class="bi bi-arrow-up me-1"></i>  {{gettinglocation}}
+            </span><span class="text-nowrap text-xs text-muted">{{lat | number}} , {{lon | number}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-sm-6 col-12">
+                <div class="card shadow border-0">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col">
+                                <span class="h6 font-semibold text-muted text-sm d-block mb-2">Searching for Nearest Hospital</span>
+                            </div>
+                            <div class="col-auto">
+                                <div class="icon icon-shape bg-primary text-white text-lg rounded-circle">
+                                    <i class="bi bi-map"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-2 mb-0 text-sm">
+                            <span class="badge badge-pill bg-soft-success text-success me-2">
+              <i class="bi bi-arrow-up me-1"></i>{{nearestHospital}}</span><span class="text-nowrap text-xs text-muted">{{showHospital}}</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-sm-6 col-12">
+                <div class="card shadow border-0">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col">
+                                <span class="h6 font-semibold text-muted text-sm d-block mb-2">Checking ICU type</span>
+                            </div>
+                            <div class="col-auto">
+                                <div class="icon icon-shape bg-info text-white text-lg rounded-circle">
+                                    <i class="bi bi-card-checklist"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-2 mb-0 text-sm">
+                            <span class="badge badge-pill bg-soft-success text-success me-2">
+              <i class="bi bi-arrow-up me-1"></i>   {{checktype}}
+            </span><span class="text-nowrap text-xs text-muted">{{showtype}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-sm-6 col-12">
+                <div class="card shadow border-0">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col">
+                                <span class="h6 font-semibold text-muted text-sm d-block mb-2">Calling Ambulance</span>
+                            </div>
+                            <div class="col-auto">
+                                <div class="icon icon-shape bg-warning text-white text-lg rounded-circle">
+                                    <i class="bi bi-telephone-outbound"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-2 mb-0 text-sm">
+                            <span class="badge badge-pill bg-soft-success text-success me-2">
+              <i class="bi bi-arrow-up me-1"></i>   {{callingambulance}}  </span><span class="text-nowrap text-xs text-muted">{{ambulancestatus}}</span>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+ <div class="container-fluid">
+            <app-sensors></app-sensors>
+  </div>

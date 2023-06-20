@@ -1,0 +1,51 @@
+<form (submit)="submit(HospitalForm)" #HospitalForm="ngForm">
+  <div class="header">
+    <h2>Hospital Sign up Page</h2>
+    <br>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="Name">Hospital Name</label>
+      <input type="text" class="form-control" ngModel name="name" #name="ngModel" required>
+
+      <p class="errMsg" *ngIf="!name.valid && name.touched">First name is required</p>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputlocationX">Location X</label>
+      <input type="number" class="form-control" id="inputlocationX" ngModel name="locationX" #locationX="ngModel" required>
+
+      <p class="errMsg" *ngIf="!locationX.valid && locationX.touched">X Location is required</p>
+    </div>
+  </div>
+    <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputlocationY">Location Y</label>
+      <input type="text" class="form-control" id="inputlocationY" ngModel name="locationY" #locationY="ngModel" required>
+
+      <p class="errMsg" *ngIf="!locationY.valid && locationY.touched">Y Location is required</p>
+    </div>
+  </div>
+    <div class="form-group col-md-6">
+      <label for="inputHotline">Hotline</label>
+      <input type="number" class="form-control" id="inputHotline" ngModel name="hotline">
+
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputState">Icu Type</label>
+        <select id="inputState" class="form-control" ngModel name="icuType" required>
+          <option value="heartProblem">Heart Problems</option>
+          <option value="lungProblem">Lung Problems</option>
+          <option value="kidneyProblem">Kidney Problems</option>
+          <option value="liverProblem">Liver Problems</option>
+        </select>
+      </div>
+      <div class="form-group col-md-6">
+        <label for="inputIcuCapacity">ICU Capacity</label>
+        <input type="number" class="form-control" id="inputIcuCapacity" ngModel name="icuCapacity">
+      </div>
+
+    </div>
+    <br>
+  <button type="submit" class="btn btn-primary" [disabled]="!HospitalForm.valid">Sign Up</button>
+</form>

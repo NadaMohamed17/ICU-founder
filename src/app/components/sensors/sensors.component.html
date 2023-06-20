@@ -1,0 +1,115 @@
+<div class="card shadow border-0 mb-7">
+    <div class="card-header">
+        <h5 class="mb-0">Sensors</h5>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-hover table-nowrap">
+            <thead class="thead-light">
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Last Check</th>
+                    <th scope="col">Value</th>
+                    <th scope="col">Risk</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <a href="https://imgbb.com/"><img src="https://i.ibb.co/JBN6fPX/blood-pressure.png" alt="blood-pressure" class="avatar avatar-sm rounded-circle me-2" /></a>
+                        <a class="text-heading font-semibold" href="#"> Blood Pressure </a>
+                    </td>
+                    <td>{{ currentTimeH }}:{{ currentTimeM }}:{{ currentTimeS }}</td>
+                    <td>{{ randSystolic }}/{{ randDistolic }}mmHg</td>
+                    <td>
+                        <span class="badge badge-lg badge-dot">
+            <i
+              [ngClass]="{
+                'bg-success': randlabelBP == 'Normal',
+                'bg-danger': randlabelBP == 'High Risk'
+              }"
+            ></i
+            >{{ randlabelBP }}
+          </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://imgbb.com/"><img src="https://i.ibb.co/vVPgJbH/cardiogram.png" alt="cardiogram" class="avatar avatar-sm rounded-circle me-2" />
+                        </a>
+                        <a class="text-heading font-semibold" href="#"> Heart Rate </a>
+                    </td>
+                    <td>{{ currentTimeH }}:{{ currentTimeM }}:{{ currentTimeS }}</td>
+                    <td>{{ randHeartrate }}BPM</td>
+                    <td>
+                        <span class="badge badge-lg badge-dot">
+            <i
+              [ngClass]="{
+                'bg-success': randlabelHeartrate == 'Normal',
+                'bg-danger': randlabelHeartrate == 'High Risk'
+              }"
+            ></i
+            >{{ randlabelHeartrate }}
+          </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://imgbb.com/"><img src="https://i.ibb.co/3mcGygY/glucosemeter.png" alt="glucosemeter" class="avatar avatar-sm rounded-circle me-2" /></a>
+                        <a class="text-heading font-semibold" href="#"> Blood Sugar </a>
+                    </td>
+                    <td>{{ currentTimeH }}:{{ currentTimeM }}:{{ currentTimeS }}</td>
+                    <td>&lt;{{ randsugar }}mg/dL</td>
+                    <td>
+                        <span class="badge badge-lg badge-dot">
+            <i
+              [ngClass]="{
+                'bg-success': randlabelSugar == 'Normal',
+                'bg-danger': randlabelSugar == 'High Risk'
+              }"
+            ></i
+            >{{ randlabelSugar }}
+          </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://imgbb.com/"><img src="https://i.ibb.co/RSzyDYb/oxygen-saturation.png" alt="oxygen-saturation" class="avatar avatar-sm rounded-circle me-2" /> </a><a class="text-heading font-semibold" href="# "> SpO2 </a>
+                    </td>
+                    <td>{{ currentTimeH }}:{{ currentTimeM }}:{{ currentTimeS }}</td>
+                    <td>{{ randSpO2 }}%</td>
+                    <td>
+                        <span class="badge badge-lg badge-dot">
+            <i
+              [ngClass]="{
+                'bg-success': randlabelSpO2 == 'Normal',
+                'bg-danger': randlabelSpO2 == 'High Risk'
+              }"
+            ></i
+            >{{ randlabelSpO2 }}
+          </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://imgbb.com/"><img src="https://i.ibb.co/RyJ017Z/temperature.png" alt="temperature" class="avatar avatar-sm rounded-circle me-2" /></a><a class="text-heading font-semibold" href="# "> Temprature </a>
+                    </td>
+                    <td>{{ currentTimeH }}:{{ currentTimeM }}:{{ currentTimeS }}</td>
+                    <td>{{ randtemperature }}</td>
+                    <td>
+                        <span class="badge badge-lg badge-dot">
+            <i
+              [ngClass]="{
+                'bg-success': randlabelTemperature == 'Normal',
+                'bg-danger': randlabelTemperature == 'High Risk'
+              }"
+            ></i
+            >{{ randlabelTemperature }}
+          </span>
+                    </td>
+                </tr>
+                <tr></tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,52 @@
+<form (submit)="update(HospitalForm)" #HospitalForm="ngForm">
+  <div class="header ms-12">
+    <h2>Hospital Edit Page</h2>
+    <br>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="Name">Hospital Name</label>
+      <input type="text" class="form-control" [ngModel]="hospital.name" name="name" #name="ngModel" required>
+
+      <p class="errMsg" *ngIf="!name.valid && name.touched">Hosptial name is required</p>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputlocationX">Longitude</label>
+      <input type="number" class="form-control" id="inputlocationX" [ngModel]="hospital.locationX" name="locationX" #locationX="ngModel" required>
+
+      <p class="errMsg" *ngIf="!locationX.valid && locationX.touched">Longitude is required</p>
+    </div>
+  </div>
+    <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputlocationY">Latitude</label>
+      <input type="number" class="form-control" id="inputlocationY" [ngModel]="hospital.locationY" name="locationY" #locationY="ngModel" required>
+
+      <p class="errMsg" *ngIf="!locationY.valid && locationY.touched">Latitdue is required</p>
+    </div>
+  </div>
+    <div class="form-group col-md-6">
+      <label for="inputHotline">Hotline</label>
+      <input type="number" class="form-control" id="inputHotline" [ngModel]="hospital.hotline" name="hotline">
+
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputState">Icu Type</label>
+        <select id="inputState" class="form-control" [ngModel]="hospital.icuType" name="icuType" required>
+          <option value="heartProblem">Heart Problems</option>
+          <option value="lungProblem">Lung Problems</option>
+          <option value="kidneyProblem">Kidney Problems</option>
+          <option value="liverProblem">Liver Problems</option>
+        </select>
+      </div>
+      <div class="form-group col-md-6">
+        <label for="inputIcuCapacity">ICU Capacity</label>
+        <input type="number" class="form-control" id="inputIcuCapacity" [ngModel]="hospital.icuCapacity" name="icuCapacity">
+      </div>
+
+    </div>
+    <br>
+  <button type="submit" class="btn btn-primary" [disabled]="!HospitalForm.valid">Update</button>
+  <button type="button" class="btn btn-danger ms-12" (click)="delete(id!)" >Delete</button>
+</form>
